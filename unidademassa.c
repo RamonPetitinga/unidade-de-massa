@@ -58,7 +58,7 @@ int main() {
                 printf("Digite o valor em libras: ");
                 scanf("%lf", &valor);
                 printf("%.2lf libras equivalem a %.2lf quilogramas.\n", valor, libras_para_quilogramas(valor));
-                break;
+                break;  //adicionado break, código estava dando erro
             case 0:
                 printf("Saindo...\n");
                 break;

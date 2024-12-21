@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <string.h>
+#include <locale.h>
 
-// Fun√ß√µes para convers√£o de unidades
+// FunÁıes para convers„o de unidades
 
 double gramas_para_quilogramas(double gramas) {
     return gramas / 1000.0;
@@ -19,22 +21,24 @@ double libras_para_quilogramas(double libras) {
 }
 
 int main() {
+
+    setlocale(LC_ALL,"Portuguese_Brazil");
     int opcao;
     double valor;
 
     do {
-        // Menu de op√ß√µes
-        printf("\nMenu de Convers√£o:\n");
+        // Menu de opÁıes
+        printf("\nMenu de Convers„o:\n");
         printf("1. Gramas para Quilogramas\n");
         printf("2. Gramas para Libras\n");
         printf("3. Quilogramas para Gramas\n");
         printf("4. Libras para Gramas\n");
-        printf("5. Quilogramas para Libras\n"); //adicionado nova convers√£o
-        printf("6. Libras para Quilogramas\n"); //adicionado nova convers√£o
+        printf("5. Quilogramas para Libras\n"); //adicionado nova convers„o
+        printf("6. Libras para Quilogramas\n"); //adicionado nova convers„o
         printf("0. Sair\n");
 
-        // Leitura da op√ß√£o escolhida pelo usu√°rio
-        printf("Escolha uma op√ß√£o: ");
+        // Leitura da opÁ„o escolhida pelo usu·rio
+        printf("Escolha opÁ„o desejada: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -42,7 +46,7 @@ int main() {
                 printf("Digite o valor em gramas: ");
                 scanf("%lf", &valor);
                 printf("%.2lf gramas equivalem a %.2lf quilogramas.\n", valor, gramas_para_quilogramas(valor));
-                break;  //adicionado break, c√≥digo estava dando erro
+                break;  //adicionado break, cÛdigo estava dando erro
             case 2:
                 // ... (outros casos)
             case 3:
@@ -51,19 +55,19 @@ int main() {
                 printf("Digite o valor em libras: ");
                 scanf("%lf", &valor);
                 printf("%.2lf libras equivalem a %.2lf gramas.\n", valor, libras_para_quilogramas(valor) * 1000.0);
-                break;  //adicionado break, c√≥digo estava dando erro
+                break;  //adicionado break, cÛdigo estava dando erro
             case 5:
                 // ... (outros casos)
             case 6:
                 printf("Digite o valor em libras: ");
                 scanf("%lf", &valor);
                 printf("%.2lf libras equivalem a %.2lf quilogramas.\n", valor, libras_para_quilogramas(valor));
-                break;  //adicionado break, c√≥digo estava dando erro
+                break;  //adicionado break, cÛdigo estava dando erro
             case 0:
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Op√ß√£o inv√°lida.\n");
+                printf("OpÁ„o inv·lida.\n");
         }
     } while (opcao != 0);
 
